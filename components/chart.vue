@@ -1,107 +1,28 @@
 <template>
-  <div>
-    <v-chart :data="data" prevent-default>
-      <v-scale x :tick-count="3" />
-      <v-tooltip :show-item-marker="false" show-x-value />
-      <v-line />
-    </v-chart>
-  
-  
-  
-  <tabbar>
-      <tabbar-item>
-        <img slot="icon" src="../assets/icon_nav_button.png">
-        <span slot="label">Wechat</span>
-      </tabbar-item>
-      <tabbar-item show-dot>
-        <img slot="icon" src="../assets/icon_nav_msg.png">
-        <span slot="label">Message</span>
-      </tabbar-item>
-      <tabbar-item selected link="/component/demo">
-        <img slot="icon" src="../assets/icon_nav_article.png">
-        <span slot="label">Explore</span>
-      </tabbar-item>
-      <tabbar-item badge="2">
-        <img slot="icon" src="../assets/icon_nav_cell.png">
-        <span slot="label">News</span>
-      </tabbar-item>
-    </tabbar>
-  </div>
-  
+  <ve-line :data="chartData"></ve-line>
 </template>
 
 <script>
-import { Badge,VChart, VTooltip, VLine, VScale,Tabbar, TabbarItem, Group, Cell } from 'vux'
 
-export default {
-  name: 'chart',
+  import VeLine from 'v-charts/lib/line.common';
+  export default {
   components: {
-    VChart,
-    VTooltip,
-    VLine,
-    VScale,
-    Tabbar,
-    TabbarItem,
-    Group,
-    Cell,
-    Badge
+      VeLine
   },
-  data () {
-    return {
-      data: [
-        { date: '2017-06-05', value: 116 },
-        { date: '2017-06-06', value: 129 },
-        { date: '2017-06-07', value: 135 },
-        { date: '2017-06-08', value: 86 },
-        { date: '2017-06-09', value: 73 },
-        { date: '2017-06-10', value: 85 },
-        { date: '2017-06-11', value: 73 },
-        { date: '2017-06-12', value: 68 },
-        { date: '2017-06-13', value: 92 },
-        { date: '2017-06-14', value: 130 },
-        { date: '2017-06-15', value: 245 },
-        { date: '2017-06-16', value: 139 },
-        { date: '2017-06-17', value: 115 },
-        { date: '2017-06-18', value: 111 },
-        { date: '2017-06-19', value: 309 },
-        { date: '2017-06-20', value: 206 },
-        { date: '2017-06-21', value: 137 },
-        { date: '2017-06-22', value: 128 },
-        { date: '2017-06-23', value: 85 },
-        { date: '2017-06-24', value: 94 },
-        { date: '2017-06-25', value: 71 },
-        { date: '2017-06-26', value: 106 },
-        { date: '2017-06-27', value: 84 },
-        { date: '2017-06-28', value: 93 },
-        { date: '2017-06-29', value: 85 },
-        { date: '2017-06-30', value: 73 },
-        { date: '2017-07-01', value: 83 },
-        { date: '2017-07-02', value: 125 },
-        { date: '2017-07-03', value: 107 },
-        { date: '2017-07-04', value: 82 },
-        { date: '2017-07-05', value: 44 },
-        { date: '2017-07-06', value: 72 },
-        { date: '2017-07-07', value: 106 },
-        { date: '2017-07-08', value: 107 },
-        { date: '2017-07-09', value: 66 },
-        { date: '2017-07-10', value: 91 },
-        { date: '2017-07-11', value: 92 },
-        { date: '2017-07-12', value: 113 },
-        { date: '2017-07-13', value: 107 },
-        { date: '2017-07-14', value: 131 },
-        { date: '2017-07-15', value: 111 },
-        { date: '2017-07-16', value: 64 },
-        { date: '2017-07-17', value: 69 },
-        { date: '2017-07-18', value: 88 },
-        { date: '2017-07-19', value: 77 },
-        { date: '2017-07-20', value: 83 },
-        { date: '2017-07-21', value: 111 },
-        { date: '2017-07-22', value: 57 },
-        { date: '2017-07-23', value: 55 },
-        { date: '2017-07-24', value: 60 }
-      ]
+    data: function () {
+      return {
+        chartData: {
+          columns: ['日期', '访问用户', '下单用户', '下单率'],
+          rows: [
+            { '日期': '1/1', '访问用户': 1393, '下单用户': 1093, '下单率': 0.32 },
+            { '日期': '1/2', '访问用户': 3530, '下单用户': 3230, '下单率': 0.26 },
+            { '日期': '1/3', '访问用户': 2923, '下单用户': 2623, '下单率': 0.76 },
+            { '日期': '1/4', '访问用户': 1723, '下单用户': 1423, '下单率': 0.49 },
+            { '日期': '1/5', '访问用户': 3792, '下单用户': 3492, '下单率': 0.323 },
+            { '日期': '1/6', '访问用户': 4593, '下单用户': 4293, '下单率': 0.78 }
+          ]
+        }
+      }
     }
   }
-}
 </script>
-

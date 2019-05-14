@@ -1,0 +1,100 @@
+<template>
+  <div>
+    <v-chart :data="data">
+      <v-scale x field="param" type="linear" :tick-count="10" />
+      <v-scale y field="qps" type="linear" :tick-count="10"/>
+      <v-tooltip show-crosshairs show-x-value show-value-in-legend />
+      
+    
+      <v-area series-field="concurrent" shape="smooth" adjust="stack" />
+    
+      
+      <v-line  series-field="concurrent" shape="smooth" adjust="stack" />
+     
+    </v-chart>
+ 
+ 
+<tabbar>
+      <tabbar-item>
+        <img slot="icon" src="../assets/icon_nav_button.png">
+        <span slot="label">首页</span>
+      </tabbar-item>
+      <tabbar-item show-dot>
+        <img slot="icon" src="../assets/icon_nav_msg.png">
+        <span slot="label">消息</span>
+      </tabbar-item>
+      <tabbar-item selected link="/component/demo">
+        <img slot="icon" src="../assets/icon_nav_article.png">
+        <span slot="label">工具箱</span>
+      </tabbar-item>
+      <tabbar-item badge="2">
+        <img slot="icon" src="../assets/icon_nav_cell.png">
+        <span slot="label">结果</span>
+      </tabbar-item>
+    </tabbar>
+  </div>
+  
+</template>
+
+
+<script>
+import { Badge,VChart, VLine, VArea, VTooltip, VLegend, VScale,Tabbar, TabbarItem, Group, Cell } from 'vux'
+
+export default {
+  name: 'chart',
+  components: {
+    VChart,
+    VTooltip,
+    VLine,
+    VScale,
+     VArea,
+    VLegend,
+    Tabbar,
+    TabbarItem,
+    Group,
+    Cell,
+    Badge
+   
+  },
+     
+  data () {
+    return {
+     data:[
+        { qps: 12, concurrent: '15', param: 500 },
+        { qps: 6, concurrent: '15', param: 1500 },
+        { qps: 3, concurrent: '15', param: 2000 },
+        { qps: 9, concurrent: '15',   param: 3000 },
+        { qps: 17, concurrent: '15', param: 5000 },
+        { qps: 16, concurrent: '15', param: 8000 },
+        { qps:  21, concurrent: '15', param: 12000 },
+        
+        { qps: 9, concurrent: '20', param: 500 },
+        { qps: 10, concurrent: '20', param: 1500 },
+        { qps: 9, concurrent: '20', param: 2000 },
+        { qps: 15, concurrent: '20',   param: 3000 },
+        { qps: 11, concurrent: '20', param: 5000 },
+        { qps: 23, concurrent: '20', param: 8000 },
+        { qps: 9, concurrent: '20', param: 12000 },
+        
+        { qps: 12, concurrent: '30', param: 500 },
+        { qps: 9, concurrent: '30', param: 1500 },
+        { qps: 19, concurrent: '30', param: 2000 },
+        { qps: 25, concurrent: '30',   param: 3000 },
+        { qps: 11, concurrent: '30', param: 5000 },
+        { qps: 3, concurrent: '30', param: 8000 },
+        { qps: 6, concurrent: '30', param: 12000 },
+        
+        { qps: 21, concurrent: '50', param: 500 },
+        { qps: 15, concurrent: '50', param: 1500 },
+        { qps: 7, concurrent: '50', param: 2000 },
+        { qps: 20, concurrent: '50',   param: 3000 },
+        { qps: 14, concurrent: '50', param: 5000 },
+        { qps: 13, concurrent: '50', param: 8000 },
+        { qps: 9, concurrent: '50', param: 12000 }
+        
+      ]
+    }
+  }
+}
+</script>
+

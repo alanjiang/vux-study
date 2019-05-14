@@ -2,7 +2,8 @@ var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var vuxLoader=require('vux-loader');
 var webpack = require("webpack");
-
+//const options = loaderUtils.getOptions(this);;
+process.noDeprecation = true
 var config = {
     entry: {
         main: './main'
@@ -18,9 +19,10 @@ var config = {
         	 {
                 test: /\.vue$/,
                 
-                loader:'vux-loader',
+                loader:'vux-loader'
                 
-                options: {
+                
+                /*options: {
                     loaders: {
                         css: ExtractTextPlugin.extract({
                         	//use: ['css-loader', 'sass-loader','less-loader','vux-loader','stylus-loader'],
@@ -29,7 +31,7 @@ var config = {
                         	fallback:'style-loader'
                            })
                     }
-                }
+                }*/
             },
             
             {

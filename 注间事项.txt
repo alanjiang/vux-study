@@ -11,3 +11,6 @@ modules.exports=vuxLoader.merge(webpackConfig,{
 
 });
 
+
+
+npm config set registry http://registry.cnpmjs.org

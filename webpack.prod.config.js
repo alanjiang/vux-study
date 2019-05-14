@@ -6,8 +6,8 @@ var vuxLoader=require('vux-loader');
 var merge = require('webpack-merge');
 var webpackBaseConfig = require('./webpack.config.js');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
-// 清空基本配置的插件列表
-webpackBaseConfig.plugins = [];
+// 保留webpack.config.js中的插件列表
+//webpackBaseConfig.plugins = [];
 
 module.exports = merge(webpackBaseConfig, {
     output: {
@@ -22,8 +22,8 @@ module.exports = merge(webpackBaseConfig, {
     	//new UglifyJsPlugin(),
         
     	new ExtractTextPlugin({
-			filename: "[name].css?[hash]-[chunkhash]-[contenthash]-[name]",
-			//disable: false,
+    		 filename: '[name].[hash].css',
+			 //disable: false,
 			allChunks: true
 		}),
     	
@@ -59,8 +59,8 @@ module.exports = merge(webpackBaseConfig, {
         
     ]
 });
-module.exports=vuxLoader.merge(webpackBaseConfig,{
-	  plugins: [{
-	    name: 'vux-ui'
-	  }]
-});
+//module.exports=vuxLoader.merge(webpackBaseConfig,{
+///	  plugins: [{
+ //   name: 'vux-ui'
+  //}]
+//});
