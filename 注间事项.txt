@@ -1,0 +1,13 @@
+npm install vux --save
+
+npm install vux-loader --save-dev
+
+const vueLoader=require('vux-loader');
+
+
+modules.exports=vuxLoader.merge(webpackConfig,{
+
+   plugins:['vux-ui']
+
+});
+

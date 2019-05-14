@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import { Tabbar, TabbarItem, Group, Cell } from 'vux'
+import { Badge,Tabbar, TabbarItem, Group, Cell } from 'vux'
 export default {
   components: {
     Tabbar,
